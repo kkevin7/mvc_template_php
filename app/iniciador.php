@@ -1,6 +1,9 @@
 <?php
     /* Importar las librerias */
-    require_once 'library/Database.php';
-    require_once 'library/Controller.php';
-    require_once 'library/Core.php';
+    require_once 'config/configurar.php';
+
+    //Funcion Autoload que importa todos los archivos de clase carpeta library 
+    spl_autoload_register(function($nombreClase){
+        require_once 'library/' . $nombreClase. '.php';
+    });
 ?>
